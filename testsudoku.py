@@ -54,13 +54,13 @@ class KnownSudokus(unittest.TestCase):
 
     
     def test_solve(self):
+        self.sudokus=sudoku.import_sudokus()
+        #print(self.sudokus)
         for puzzle, solution in self.sudokus:
             result=sudoku.backtrack(puzzle)
             self.assertEqual(result, solution)
     
-    def test_isValid(self):
-        for puzzle in self.sudokus:
-            self.assertTrue(sudoku.isValid(puzzle[1]))
+
 
 
 
